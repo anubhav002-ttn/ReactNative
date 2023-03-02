@@ -6,11 +6,14 @@ import Deshboard from './Deshboard';
 
 
 const Drawer = createDrawerNavigator();
-const MyDrawer=()=> {
+
+const MyDrawer=({route, navigation})=> {
+  const name= route.params.name
   return (
     <Drawer.Navigator>
-    <Drawer.Screen name="Deshboard" component={Deshboard} options={{headerShown:false}} />
+    <Drawer.Screen name="Deshboard" component={() => <Deshboard data={name} navigation={navigation}/>} />
     <Drawer.Screen name="Home" component={Home} />
+    
   </Drawer.Navigator>
   )
 }

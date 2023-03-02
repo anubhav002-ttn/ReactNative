@@ -5,7 +5,7 @@ function Login({ navigation }) {
 
     const [text, onChangeText] = React.useState('');
     const image = { uri: "https://picsum.photos/seed/picsum/200/300" };
-    const onPress = () => navigation.navigate('MyDrawer');
+    const onPress = () => navigation.navigate('MyDrawer',{name:text});
     
   return (
     <View>

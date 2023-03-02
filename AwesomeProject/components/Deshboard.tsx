@@ -1,12 +1,15 @@
 import React from 'react'
-import { Image, TextInput, ImageBackground, View, Text,TouchableOpacity } from "react-native";
+import { Button,View, Text,TouchableOpacity } from "react-native";
 
-function Deshboard() {
+function Deshboard({data, navigation}) {
+  // const onPress = () => navigation.navigate('Login');
+   
   return (
     <View>
         <Text>
-            Deshboard
+            Deshboard {data}
         </Text>
+        <Button onPress={ () => navigation.navigate('Login')} title="LogOut"/>
     </View>
   )
 }
