@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image, TextInput, ImageBackground, View, Text,TouchableOpacity } from "react-native";
+import {connect} from 'react-redux';
 
 function Login({ navigation }) {
 
@@ -63,6 +64,9 @@ function Login({ navigation }) {
       </ImageBackground>
     </View>
   )
+}
+const mapStateToProps=()=>{
+
 }
 
 export default Login

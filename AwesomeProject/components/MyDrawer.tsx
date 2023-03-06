@@ -3,6 +3,7 @@ import { Image, TextInput, ImageBackground, View, Text,TouchableOpacity } from "
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './Home';
 import Deshboard from './Deshboard';
+import Cart from './Cart';
 
 
 const Drawer = createDrawerNavigator();
@@ -13,6 +14,7 @@ const MyDrawer=({route, navigation})=> {
     <Drawer.Navigator>
     <Drawer.Screen name="Deshboard" component={() => <Deshboard data={name} navigation={navigation}/>} />
     <Drawer.Screen name="Home" component={Home} />
+    <Drawer.Screen name='Cart' component={Cart} />
     
   </Drawer.Navigator>
   )
