@@ -28,6 +28,7 @@ function Cart() {
     const dispatch = useDispatch();
     const myState = useSelector(state => state.counterReducer)
     return (
+        <View style={{flex:2}}>
         <View>
             {
                 fruits.map((item, index) => {
@@ -42,7 +43,11 @@ function Cart() {
                         />
                      );
                 })} 
+        </View>
+        <View style={{flex:1, borderWidth:1, borderTopStartRadius:10, borderTopEndRadius:10, marginHorizontal:20} }>
 
+
+        </View>
         </View>
     )
 }
