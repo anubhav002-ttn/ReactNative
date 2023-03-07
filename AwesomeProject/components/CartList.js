@@ -4,7 +4,7 @@ import { addition, subtraction } from '../Redux/Action/Counter';
 
 function CartList(props) {
   const  {myState, dispatch, name ,image, Price, id} =props;
-  console.log(image)
+  console.log('hello',myState)
   return (
     <View>
         <View style={[styles.container, styles.shadowProp, styles.counter]}>

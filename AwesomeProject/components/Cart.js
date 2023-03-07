@@ -27,16 +27,17 @@ const fruits = [
 function Cart() {
     const dispatch = useDispatch();
     const myState = useSelector(state => state.counterReducer)
+    console.log('haan',myState)
     return (
         <View style={{flex:2}}>
         <View>
             {
-                fruits.map((item, index) => {
+                myState.map((item, index) => {
                     return (
                         <CartList
                             id={item.id}
                             dispatch={dispatch}
-                            myState={myState}
+                            myState={item.count}
                             image={item.image}
                             name={item.name}
                             Price={item.Price}
@@ -44,7 +45,7 @@ function Cart() {
                      );
                 })} 
         </View>
-        <View style={{flex:1, borderWidth:1, borderTopStartRadius:10, borderTopEndRadius:10, marginHorizontal:20} }>
+        <View style={{flex:1, borderWidth:1, borderRadius:10, margin:20} }>
 
 
         </View>
