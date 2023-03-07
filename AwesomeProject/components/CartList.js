@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button,View, Text,TouchableOpacity, StyleSheet, Image } from "react-native";
-import { addition, subtraction } from '../Redux/Action/Counter';
+
 
 function CartList(props) {
-  const  {myState, dispatch, name ,image, Price, id} =props;
+  const  {myState, dispatch, name ,image, Price, id, addition, subtraction} =props;
   console.log('hello',myState)
   return (
     <View>

@@ -1,33 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, Image, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useSelector, useDispatch } from 'react-redux';
 import CartList from './CartList';
+import { addition, subtraction } from '../Redux/Action/Counter';
+import { Connect } from 'react-redux';
 
-const fruits = [
-    {
-        id: 1,
-        name: 'Orange',
-        Price: '2.5',
-        image:  require('../assets/Images/orange.webp')
-    },
-    {
-        id: 2,
-        name: 'Apple',
-        Price: '3',
-        image:  require('../assets/Images/apple.jpg')
-    },
-    {
-        id: 3,
-        name: 'Strawberry',
-        Price: '3',
-        image: require('../assets/Images/strawberry.jpg')
-    }
-]
-
-function Cart() {
-    const dispatch = useDispatch();
+function Cart() {        
     const myState = useSelector(state => state.counterReducer)
-    console.log('haan',myState)
+    console.log('haan',myState)  
+    
+    const dispatch = useDispatch();
     return (
         <View style={{flex:2}}>
         <View>
@@ -35,12 +17,15 @@ function Cart() {
                 myState.map((item, index) => {
                     return (
                         <CartList
+                            key={index}
                             id={item.id}
                             dispatch={dispatch}
                             myState={item.count}
                             image={item.image}
                             name={item.name}
                             Price={item.Price}
+                            addition={addition}
+                            subtraction={subtraction}
                         />
                      );
                 })} 
